@@ -1,0 +1,12 @@
+__pycache__/
+.idea/
+./
+.venv/
+.vscode/
+Django1/
+Django2/
+email_alert/
+gamechecker/
+JSON1/
+myworld/
+

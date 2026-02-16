@@ -1,0 +1,62 @@
+<!-- HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .weather-box { border: 1px solid #ccc; padding: 20px; width: 350px; }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="post">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather %}
+    <div class="weather-box">
+        <h2>{{ weather['city'] }}</h2>
+        <p><strong>Temperature:</strong> {{ weather['temp'] }}°C</p>
+        <p><strong>Description:</strong> {{ weather['description'] }}</p>
+        <p><strong>Humidity:</strong> {{ weather['humidity'] }}%</p>
+        <p><strong>Wind Speed:</strong> {{ weather['wind'] }} m/s</p>
+    </div>
+    {% elif error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather Checker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="weather-box">
+        <h1>Weather App</h1>
+        <form method="POST">
+            <input type="text"  name="city" placeholder="Enter city name" required>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if weather %}
+            <p>{{ weather.city }}</p>  
+            <p>Description: {{ weather['description'] }}<img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png " alt="Weather icon" style="width:30px; height:30px;"></p>
+            <p>Temperature: {{ weather['temp'] }}°C</p>
+            <p>Humidity: {{ weather['humidity'] }}%</p>
+            <p>Wind Speed: {{ weather['wind'] }} m/s</p>
+
+
+        {% else %}
+            <p style ="color:red">{{ error }}</p>
+        {% endif %}
+        
+    </div>
+    {% if weather.description == "Overcast Clouds" %}
+        <img src="{{ url_for('static', filename='clouds.png') }}" alt="Overcast Clouds">
+    {% endif %}
+</body>
+</html>

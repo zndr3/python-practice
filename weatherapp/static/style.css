@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.weather-box {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-inline: auto;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 20px;
+    background: linear-gradient(225deg, #f0f0f0, #cacaca);
+    box-shadow:  -5px 5px 10px #989898,
+             5px -5px 10px #ffffff;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    /* position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    
+}
+/* @keyframes example {
+  0%   {left:0px; top:0px;}
+  25%  {left:200px; top:0px;}
+  50%  {left:200px; top:200px;}
+  75%  {left:0px; top:200px;}
+  100% {left:0px; top:0px;}
+} */
